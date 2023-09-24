@@ -1,0 +1,39 @@
+{% extends './base.html'%}
+
+
+
+
+
+{% block title%}
+Signup page
+{% endblock %}
+
+
+{% block body%}
+<h1 class="text-primary"> Signup</h1>
+<form method="post" action="">
+    {%csrf_token%}
+    <label for="username">Username</label><br><br>
+    <input type="text" id="username" name="username"><br><br>
+    <label for="email">Email</label><br><br>
+    <input type="text" id="email" name="email"><br><br>
+    <label for="password1">Password</label><br><br>
+    <input type="password" id="password1" name="password"><br><br>
+    <label for="password2">Confirm password</label><br><br>
+    <input type="password" id="password2" name="confirm_password"><br><br>
+    <button type="submit">Signup</button>
+
+</form>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+

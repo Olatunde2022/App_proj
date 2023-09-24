@@ -1,0 +1,25 @@
+{% extends './base.html'%}
+
+
+
+
+
+{% block title%}
+create blog
+{% endblock %}
+
+
+{% block body%}
+
+
+<form action=""method="POST" enctype="multipart/form-data">
+    {% csrf_token%}
+<input type="text" name="title" placeholder="Enter your blog title"><br><br><br>
+ <textarea name="body" id="" rows="10" placeholder="Enter blog body"></textarea><br><br><br>
+ <input type="file" name="image"><br><br><br>
+ <input type="number" name="rating" placeholder="Enterrating"><br><br><br>
+ <button type="submit">Create</button>
+</form>
+
+{% endblock %}
+

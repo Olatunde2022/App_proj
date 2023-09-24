@@ -1,0 +1,31 @@
+{% extends './base.html'%}
+
+
+
+
+
+{% block title%}
+create-todo
+{% endblock %}
+
+
+{% block body%}
+<form action=""method="POST">
+    {% csrf_token%}
+<input type="text" name="title" placeholder="Enter your Todo title"><br><br><br>
+<input type="date" name="date" placeholder="date"><br><br><br>
+<textarea name="body" id="" rows="10" placeholder="Enter todo body"></textarea><br><br><br>
+<input type="number" name="scale_of_importance" placeholder="scale"><br><br><br> 
+ <button type="submit">Create</button>
+
+</form>
+
+{% endblock %}
+
+
+
+
+
+
+
+

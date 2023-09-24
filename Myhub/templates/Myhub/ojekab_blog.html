@@ -1,0 +1,33 @@
+{% extends './base.html'%}
+
+
+
+
+
+{% block title%}
+blogs page
+{% endblock %}
+
+
+{% block body%}
+
+<h1> {{item.title}}</h1>
+<img src="{{item.image.url}}" alt="The Blog Image">
+<p> {{item.body}} </p>
+<p>Rating: {{item.rating}} </p>
+<p>Created by {{item.owner.username}} </p>
+{% if item.owner == user %}
+<p><a href="{% url 'edit' item.id %}">Edit</a></p>
+{% endif %}
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+

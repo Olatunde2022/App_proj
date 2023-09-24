@@ -1,0 +1,25 @@
+{% extends './base.html'%}
+
+
+
+
+
+{% block title%}
+edit blog
+{% endblock %}
+
+
+{% block body%}
+
+
+<form action=""method="POST">
+    {% csrf_token%}
+<input type="text" name="title" placeholder="Enter your blog title" value="{{blog.title}}"><br><br><br>
+ <textarea name="body" id="" rows="10" placeholder="Enter blog body"> {{blog.body}}</textarea><br><br><br>
+ {% comment %} <input type="file" name="image"><br><br><br> {% endcomment %}
+ <input type="number" name="rating" placeholder="Enterrating" value="{{blog.rating}}"><br><br><br>
+ <button type="submit">Create</button>
+</form>
+
+{% endblock %}
+

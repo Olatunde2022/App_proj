@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+
+        {% endblock%}
+    </title>
+    <style>
+        .success{
+            color:white;
+            background-color:blue;
+        }
+        .error{
+            color:white;
+            background-color:red;
+        }
+    </style>
+</head>
+<body>
+    <hr>
+    <nav>
+        <ul>
+            <li>    <a href ="{% url 'homepage' %}">Home</a></li>
+            {% if user.is_authenticated%}
+            <li>    <a href ="{% url 'todo' %}">Create Todo</a></li>
+            <li><a href="{% url 'createblog' %}">Create a blog</a></li>
+            {% comment %} <li><a href="{% url 'editblog' %}">Edit a blog</a></li> {% endcomment %}
+            <li><a href ="{% url 'logout' %}">Logout</a></li>
+            
+            {% else%}
+            <li><a href ="{% url 'signuppage' %}">Sign Up</a></li>
+            <li><a href ="{% url 'loginpage' %}">Login</a></li>
+            {% endif%}
+            
+            {% comment %} <li>    <a href ="{% url '' %}">My Todo</a></li> {% endcomment %}
+        </ul>
+    </nav>
+    <hr>
+
+
+
+    {% for message in messages %}
+<p class="{{message.tags}}">{{message}} </p>
+{% endfor %}
+    
+{% comment %} {{user}} {% endcomment %}
+
+
+
+
+
+
+      {% block body %}
+
+        {% endblock%}
+</body>
+</html>
